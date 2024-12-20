@@ -1,0 +1,20 @@
+.card {
+    background: green;
+    height: 45vh;
+    width: 15vw;
+    border: 1px solid yellow;
+    color: yellow;
+    border-radius: 10px;
+    padding: 2em;
+      
+}
+
+img {
+    width: 15vw;
+    height: 15vw;
+}
+
+.card:hover {
+    background: blue;
+}
+
