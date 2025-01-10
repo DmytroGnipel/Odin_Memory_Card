@@ -1,25 +1,25 @@
 .page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #009033;
-    padding-bottom: 10vh;
-    border: 10px solid blue;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #009033;
+  padding-bottom: 10vh;
+  border: 10px solid blue;
+  text-align: center;
 }
 
 .counter {
-    margin-bottom: 25px;
-    color: yellow;
+  margin-bottom: 25px;
+  color: yellow;
 }
 
 .cardsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    row-gap: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 5vh;
 }
 
 h2 {
-    margin-top: 5vh;
+  margin-top: 5vh;
 }
