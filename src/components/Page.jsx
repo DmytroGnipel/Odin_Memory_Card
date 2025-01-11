@@ -1,5 +1,5 @@
 import Card from "./Card.jsx";
-import "../styles/Page.css";
+import styles from "./Page.module.css";
 import { useEffect, useState } from "react";
 
 const pokemonArray = [
@@ -61,6 +61,20 @@ export default function Page() {
       return result;
     }
 
+    function changeValues(array) {
+      let counter = 0;
+      const newValues = values.map((item) => {
+        const result = {
+          name: array[counter].name,
+          id: item.id,
+          url: array[counter].sprites.other["official-artwork"].front_default,
+        };
+        counter++;
+        return result;
+      });
+      setValues(newValues);
+    }
+
     //get array of promises from all fetch
     function fetchAll() {
       const arrayRandomNames = getArrayRandomNames();
@@ -81,40 +95,23 @@ export default function Page() {
             .finally(() => setLoading(false));
         });
     }
-
     fetchAll();
-
-    function changeValues(array) {
-      let counter = 0;
-      const newValues = values.map((item) => {
-        const result = {
-          name: array[counter].name,
-          id: item.id,
-          url: array[counter].sprites.other["official-artwork"].front_default,
-        };
-        counter++;
-        return result;
-      });
-      setValues(newValues);
-    }
-    //getUrlsArray();
   }, [click]);
-
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
 
   return (
-    <div className="page">
-      <div className="counter">
-        <h2>Pokemon Memory Game</h2>
+    <div className={styles.page}>
+      <div className={styles.counter}>
+        <h2 className={styles.h2}>Pokemon Memory Game</h2>
         <p>
           Get points by clicking on an image but don't click on any more than
           once!
         </p>
         <b>Score:</b> {nameStorage.length} <b>Best score:</b> {bestScore}
       </div>
-      <div className="cardsContainer">
+      <div className={styles.cardsContainer}>
         {values.map((item) => (
           <Card
             id={item.id}

@@ -1,15 +1,14 @@
-import "../styles/Card.css";
+import styles from "./Card.module.css";
 
 export default function Card({ name, url, changeClick, countPoints }) {
   return (
     <div
-      name={name}
-      className="card"
+      className={styles.card}
       onClick={() => {
         countPoints(name);
       }}
     >
-      <img src={url} onClick={changeClick} />
+      <img className={styles.img} src={url} onClick={changeClick} />
       <p>{name}</p>
     </div>
   );
